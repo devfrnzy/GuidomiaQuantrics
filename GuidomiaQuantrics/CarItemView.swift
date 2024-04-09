@@ -9,7 +9,7 @@ import SwiftUI
 
 /// Shows the details of a Car
 struct CarItemView: View {
-    @State var carVM: CarViewModel
+    @ObservedObject var carVM: CarViewModel
     
     var body: some View {
         HStack(spacing: 10) {
