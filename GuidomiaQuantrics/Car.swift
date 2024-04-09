@@ -15,4 +15,5 @@ struct Car: Codable {
     var prosList: [String]
     var consList: [String]
     var rating: Int
+    var imageName: String
 }
