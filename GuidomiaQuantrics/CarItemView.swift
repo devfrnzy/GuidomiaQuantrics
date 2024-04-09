@@ -9,19 +9,21 @@ import SwiftUI
 
 /// Shows the details of a Car
 struct CarItemView: View {
+    @State var carVM: CarViewModel
+    
     var body: some View {
         HStack(spacing: 10) {
-            Image("Alpine_roadster")
+            Image(carVM.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 150)
                 .padding(.leading)
             VStack(alignment: .leading) {
-                Text("Mercedes benz")
+                Text(carVM.make)
                     .font(.title2)
                     .bold()
                     .foregroundStyle(.themeText)
-                Text("Price: 120k")
+                Text("Price: \(carVM.price)")
                     .bold()
                     .foregroundStyle(.themeText)
                 HStack {
@@ -39,8 +41,4 @@ struct CarItemView: View {
         .frame(maxWidth: .infinity)
         .background(.themeLightGray)
     }
-}
-
-#Preview {
-    CarItemView()
 }
