@@ -32,6 +32,10 @@ class CarViewModel: ObservableObject {
         return "\(priceInThousands.cleanString)K"
     }
     
+    var rating: Int {
+        return car.rating
+    }
+    
 }
 
 

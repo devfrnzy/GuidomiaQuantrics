@@ -27,7 +27,7 @@ struct CarItemView: View {
                     .bold()
                     .foregroundStyle(.themeText)
                 HStack {
-                    ForEach(1..<6) { number in
+                    ForEach(0..<carVM.rating, id:\.self) { _ in
                         Image(systemName: "star.fill")
                             .foregroundColor(.themeOrange)
                     }
