@@ -16,6 +16,7 @@
 		F1CA12422BC5C0F0006A427F /* car_list.json in Resources */ = {isa = PBXBuildFile; fileRef = F1CA12412BC5C0F0006A427F /* car_list.json */; };
 		F1CA12442BC5C136006A427F /* CarListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA12432BC5C136006A427F /* CarListViewModel.swift */; };
 		F1CA12462BC5CB42006A427F /* CarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA12452BC5CB42006A427F /* CarViewModel.swift */; };
+		F1CA12482BC5CFC6006A427F /* Double+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA12472BC5CFC6006A427F /* Double+Formatting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		F1CA12412BC5C0F0006A427F /* car_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = car_list.json; sourceTree = "<group>"; };
 		F1CA12432BC5C136006A427F /* CarListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewModel.swift; sourceTree = "<group>"; };
 		F1CA12452BC5CB42006A427F /* CarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewModel.swift; sourceTree = "<group>"; };
+		F1CA12472BC5CFC6006A427F /* Double+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Formatting.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				F1CA12412BC5C0F0006A427F /* car_list.json */,
 				F1CA12432BC5C136006A427F /* CarListViewModel.swift */,
 				F1CA12452BC5CB42006A427F /* CarViewModel.swift */,
+				F1CA12472BC5CFC6006A427F /* Double+Formatting.swift */,
 			);
 			path = GuidomiaQuantrics;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1CA12442BC5C136006A427F /* CarListViewModel.swift in Sources */,
+				F1CA12482BC5CFC6006A427F /* Double+Formatting.swift in Sources */,
 				F1CA12462BC5CB42006A427F /* CarViewModel.swift in Sources */,
 				F1CA12322BC5B101006A427F /* ContentView.swift in Sources */,
 				F1CA12302BC5B101006A427F /* GuidomiaQuantricsApp.swift in Sources */,
