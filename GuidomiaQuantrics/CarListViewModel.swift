@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// Decodes the JSON file to create Car objects
+/// Creates an array of CarViewModel based on the generated Car objects from the JSON file
 class CarListViewModel: ObservableObject {
     
     @Published var carViewModels: [CarViewModel] = []
@@ -19,6 +21,7 @@ class CarListViewModel: ObservableObject {
         createCarViewModels()
     }
     
+    /// Decodes the JSON file to an array of Car
     func decodeCarsJSON() {
         guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
             print("DEBUG: JSON file:\(fileName).json not found")
@@ -28,12 +31,12 @@ class CarListViewModel: ObservableObject {
         do {
             let data = try Data(contentsOf: url)
             self.cars = try JSONDecoder().decode([Car].self, from: data)
-            print(self.cars)
         } catch {
             print("DEBUG: Error has occured - \(error.localizedDescription)")
         }
     }
     
+    /// Generates an array of CarViewModel objects based on the array of Car
     func createCarViewModels() {
         var carVMs = [CarViewModel]()
         for car in cars {
@@ -43,5 +46,4 @@ class CarListViewModel: ObservableObject {
         
         carViewModels = carVMs
     }
-    
 }

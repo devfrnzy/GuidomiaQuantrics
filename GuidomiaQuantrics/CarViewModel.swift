@@ -35,9 +35,7 @@ class CarViewModel: ObservableObject {
     var rating: Int {
         return car.rating
     }
-    
 }
-
 
 /// Conform to Identifiable and Hashable in order for us to use it on a Foreach loop
 extension CarViewModel: Identifiable, Hashable {
