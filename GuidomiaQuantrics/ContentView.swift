@@ -13,13 +13,22 @@ struct ContentView: View {
     var body: some View {
         List {
             ForEach(vm.carViewModels) { carVM in
-                CarItemView(carVM: carVM)
-                .listRowInsets(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
-                .listRowSpacing(20)
+                VStack(spacing: 0) {
+                    CarItemView(carVM: carVM)
+                        .background(.red)
+    
+                    // Custom Separator
+                    Rectangle()
+                        .frame(height: 4)
+                        .foregroundColor(.themeOrange)
+                        .padding()
+                }
+                .listRowInsets(EdgeInsets())
+                .listRowSeparator(.hidden)
             }
-           
         }
         .listStyle(.plain)
+        
     }
 }
 
