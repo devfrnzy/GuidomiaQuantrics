@@ -29,15 +29,13 @@ class CarViewModel: ObservableObject {
     
     var price: String {
         let priceInThousands = car.marketPrice/1000
-       
-        return  String(format: "%.1fK", priceInThousands)
+        return "\(priceInThousands.cleanString)K"
     }
-    
-    
     
 }
 
 
+/// Conform to Identifiable and Hashable in order for us to use it on a Foreach loop
 extension CarViewModel: Identifiable, Hashable {
     var identifier: String {
         return UUID().uuidString
