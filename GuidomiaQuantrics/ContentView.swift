@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var vm = CarListViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        List {
+            ForEach(vm.carViewModels) { carVM in
+                CarItemView(carVM: carVM)
+                .listRowInsets(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
+                .listRowSpacing(20)
+            }
+           
         }
-        .padding()
+        .listStyle(.plain)
     }
 }
 
