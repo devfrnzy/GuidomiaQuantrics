@@ -12,6 +12,7 @@ import Foundation
 class CarListViewModel: ObservableObject {
     
     @Published var carViewModels: [CarViewModel] = []
+    @Published var carModelNames = [String: Set<String>]()
     
     var expandedCarVM: CarViewModel?
     private let fileName = "car_list"
@@ -19,7 +20,7 @@ class CarListViewModel: ObservableObject {
     
     init() {
         decodeCarsJSON()
-        createCarViewModels()
+        processCars()
     }
     
     /// Decodes the JSON file to an array of Car
@@ -37,12 +38,21 @@ class CarListViewModel: ObservableObject {
         }
     }
     
-    /// Generates an array of CarViewModel objects based on the array of Car
-    func createCarViewModels() {
+    
+    /// Generates an array of CarViewModel and the dictionary of carModelNames
+    func processCars() {
         var carVMs = [CarViewModel]()
         for car in cars {
             let carVM = CarViewModel(car: car)
             carVMs.append(carVM)
+            
+            // Collect available make/model
+            if var modelNames = carModelNames[car.make] {
+                modelNames.insert(car.model)
+                carModelNames[car.make] = modelNames
+            } else {
+                carModelNames[car.make] = [car.model]
+            }
         }
         
         carViewModels = carVMs
