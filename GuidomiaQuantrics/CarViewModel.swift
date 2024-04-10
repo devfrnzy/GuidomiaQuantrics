@@ -9,6 +9,7 @@ import Foundation
 
 class CarViewModel: ObservableObject {
     
+    @Published var isExpanded = false
     private let car: Car
     
     init(car: Car) {
@@ -34,6 +35,14 @@ class CarViewModel: ObservableObject {
     
     var rating: Int {
         return car.rating
+    }
+    
+    var pros: [String] {
+        return car.prosList
+    }
+    
+    var cons: [String] {
+        return car.consList
     }
 }
 
