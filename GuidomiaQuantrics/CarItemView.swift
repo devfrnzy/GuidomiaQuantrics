@@ -39,21 +39,28 @@ struct CarItemView: View {
                 Spacer()
             }
             
-            VStack(alignment: .leading) {
-                if !carVM.pros.isEmpty {
-                    CarBulletDetailsView(title: "Pros", bulletItems: carVM.pros)
-                }
-                
-                if !carVM.cons.isEmpty {
-                    CarBulletDetailsView(title: "Cons", bulletItems: carVM.cons)
+            if carVM.isExpanded {
+                VStack(alignment: .leading) {
+                    if !carVM.pros.isEmpty {
+                        CarBulletDetailsView(title: "Pros", bulletItems: carVM.pros)
+                    }
                     
+                    if !carVM.cons.isEmpty {
+                        CarBulletDetailsView(title: "Cons", bulletItems: carVM.cons)
+                        
+                    }
                 }
+                .padding()
             }
-            .padding()
         }
         .padding(.leading, 5)
         .padding(.vertical, 20)
         .frame(maxWidth: .infinity)
         .background(.themeLightGray)
+        .onTapGesture {
+            withAnimation {
+                carVM.isExpanded = !carVM.isExpanded
+            }
+        }
     }
 }
