@@ -46,6 +46,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F125CB492BC7279F009CB373 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1CA12312BC5B101006A427F /* ContentView.swift */,
+				F1CA123D2BC5B682006A427F /* CarItemView.swift */,
+				F125CB442BC71ACB009CB373 /* CarBulletDetailsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F125CB4A2BC727AE009CB373 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1CA123F2BC5BF50006A427F /* Car.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F125CB4B2BC727B5009CB373 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F1CA12432BC5C136006A427F /* CarListViewModel.swift */,
+				F1CA12452BC5CB42006A427F /* CarViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F125CB4C2BC727BD009CB373 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F1CA12472BC5CFC6006A427F /* Double+Formatting.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F125CB4D2BC727C6009CB373 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F1CA12412BC5C0F0006A427F /* car_list.json */,
+				F1CA12332BC5B103006A427F /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		F1CA12232BC5B101006A427F = {
 			isa = PBXGroup;
 			children = (
@@ -66,16 +110,12 @@
 			isa = PBXGroup;
 			children = (
 				F1CA122F2BC5B101006A427F /* GuidomiaQuantricsApp.swift */,
-				F1CA12312BC5B101006A427F /* ContentView.swift */,
-				F1CA123D2BC5B682006A427F /* CarItemView.swift */,
-				F1CA12332BC5B103006A427F /* Assets.xcassets */,
+				F125CB492BC7279F009CB373 /* Views */,
+				F125CB4B2BC727B5009CB373 /* ViewModels */,
+				F125CB4A2BC727AE009CB373 /* Models */,
+				F125CB4D2BC727C6009CB373 /* Resource */,
+				F125CB4C2BC727BD009CB373 /* Extensions */,
 				F1CA12352BC5B103006A427F /* Preview Content */,
-				F1CA123F2BC5BF50006A427F /* Car.swift */,
-				F1CA12412BC5C0F0006A427F /* car_list.json */,
-				F1CA12432BC5C136006A427F /* CarListViewModel.swift */,
-				F1CA12452BC5CB42006A427F /* CarViewModel.swift */,
-				F1CA12472BC5CFC6006A427F /* Double+Formatting.swift */,
-				F125CB442BC71ACB009CB373 /* CarBulletDetailsView.swift */,
 			);
 			path = GuidomiaQuantrics;
 			sourceTree = "<group>";
