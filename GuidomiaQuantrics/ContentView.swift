@@ -11,23 +11,25 @@ struct ContentView: View {
     @StateObject var vm = CarListViewModel()
     
     var body: some View {
-        List {
-            ForEach(vm.carViewModels) { carVM in
-                VStack(spacing: 0) {
-                    CarItemView(carVM: carVM)
-                        .background(.red)
-    
-                    // Custom Separator
-                    Rectangle()
-                        .frame(height: 4)
-                        .foregroundColor(.themeOrange)
-                        .padding()
+        
+        ScrollView {
+            LazyVStack {
+                ForEach(vm.carViewModels) { carVM in
+                    VStack(spacing: 0) {
+                        CarItemView(carVM: carVM)
+                            .background(.red)
+                        
+                        // Custom Separator
+                        Rectangle()
+                            .frame(height: 4)
+                            .foregroundColor(.themeOrange)
+                            .padding()
+                    }
+                    .listRowInsets(EdgeInsets())
+                    .listRowSeparator(.hidden)
                 }
-                .listRowInsets(EdgeInsets())
-                .listRowSeparator(.hidden)
             }
         }
-        .listStyle(.plain)
         
     }
 }
