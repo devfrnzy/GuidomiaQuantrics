@@ -47,7 +47,6 @@ struct CarItemView: View {
                     
                     if !carVM.cons.isEmpty {
                         CarBulletDetailsView(title: "Cons", bulletItems: carVM.cons)
-                        
                     }
                 }
                 .padding()
@@ -57,10 +56,5 @@ struct CarItemView: View {
         .padding(.vertical, 20)
         .frame(maxWidth: .infinity)
         .background(.themeLightGray)
-        .onTapGesture {
-            withAnimation {
-                carVM.isExpanded = !carVM.isExpanded
-            }
-        }
     }
 }

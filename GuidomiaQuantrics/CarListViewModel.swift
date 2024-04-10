@@ -13,6 +13,7 @@ class CarListViewModel: ObservableObject {
     
     @Published var carViewModels: [CarViewModel] = []
     
+    var expandedCarVM: CarViewModel?
     private let fileName = "car_list"
     private var cars: [Car] = []
     
@@ -45,5 +46,30 @@ class CarListViewModel: ObservableObject {
         }
         
         carViewModels = carVMs
+        expand(carVM: carViewModels[0])
     }
+    
+    /// Expands or Collapses the CarViewModel depending on its current status
+    func expandCollapse(carVM: CarViewModel) {
+        if carVM.isExpanded {
+            collapse()
+        } else {
+            expand(carVM: carVM)
+        }
+    }
+    
+    /// Collapses the current Expanded CarVM if any, then expands the passed carVM
+    private func expand(carVM: CarViewModel) {
+        // Collapse current expanded if any to make sure only 1 CarVM can be expanded at a time
+        collapse()
+        carVM.isExpanded = true
+        expandedCarVM = carVM
+    }
+
+    /// Collapses the current Expanded CarVM
+    private func collapse() {
+        expandedCarVM?.isExpanded = false
+        expandedCarVM = nil
+    }
+   
 }

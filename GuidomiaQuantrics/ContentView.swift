@@ -11,13 +11,16 @@ struct ContentView: View {
     @StateObject var vm = CarListViewModel()
     
     var body: some View {
-        
         ScrollView {
             LazyVStack {
                 ForEach(vm.carViewModels) { carVM in
                     VStack(spacing: 0) {
                         CarItemView(carVM: carVM)
-                            .background(.red)
+                            .onTapGesture {
+                                withAnimation {
+                                    vm.expandCollapse(carVM: carVM)
+                                }
+                            }
                         
                         // Custom Separator
                         Rectangle()
