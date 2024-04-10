@@ -35,6 +35,53 @@ struct ContentView: View {
         }
         
     }
+    
+    var filterSectionView: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Filters")
+                .font(.title2)
+                .foregroundStyle(.white)
+            
+            VStack(spacing: 15) {
+                
+                // Make Filter
+                ZStack {
+                    RoundedRectangle(cornerRadius: 8)
+                        .foregroundColor(.white)
+                        .frame(height: 35)
+                        .shadow(radius: 2, x: 1, y: 1)
+                    HStack {
+                        Text("Any make")
+                            .bold()
+                            .foregroundStyle(.themeText)
+                        Spacer()
+                    }
+                    .padding(.horizontal)
+                }
+                
+                // Model Filter
+                ZStack {
+                    RoundedRectangle(cornerRadius: 8)
+                        .foregroundColor(.white)
+                        .frame(height: 35)
+                        .shadow(radius: 2, x: 1, y: 1)
+                    HStack {
+                        Text("Any model")
+                            .bold()
+                            .foregroundStyle(.themeText)
+                        Spacer()
+                    }
+                    .padding(.horizontal)
+                }
+            }
+            
+        }
+        .padding(EdgeInsets(top: 8, leading: 12, bottom: 20, trailing: 12))
+        .background {
+            RoundedRectangle(cornerRadius: 8)
+                .foregroundColor(.themeDarkGray)
+        }
+    }
 }
 
 #Preview {
