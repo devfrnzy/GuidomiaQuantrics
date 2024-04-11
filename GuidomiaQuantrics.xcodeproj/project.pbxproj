@@ -21,6 +21,7 @@
 		F1CA12482BC5CFC6006A427F /* Double+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA12472BC5CFC6006A427F /* Double+Formatting.swift */; };
 		F1D8696A2BC83023002733B2 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = F1D869692BC83023002733B2 /* Realm */; };
 		F1D8696C2BC83023002733B2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F1D8696B2BC83023002733B2 /* RealmSwift */; };
+		F1D8696E2BC83062002733B2 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D8696D2BC83062002733B2 /* RealmManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		F1CA12432BC5C136006A427F /* CarListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewModel.swift; sourceTree = "<group>"; };
 		F1CA12452BC5CB42006A427F /* CarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewModel.swift; sourceTree = "<group>"; };
 		F1CA12472BC5CFC6006A427F /* Double+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Formatting.swift"; sourceTree = "<group>"; };
+		F1D8696D2BC83062002733B2 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				F125CB4D2BC727C6009CB373 /* Resource */,
 				F125CB4C2BC727BD009CB373 /* Extensions */,
 				F1CA12352BC5B103006A427F /* Preview Content */,
+				F1D8696D2BC83062002733B2 /* RealmManager.swift */,
 			);
 			path = GuidomiaQuantrics;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				F125CB452BC71ACB009CB373 /* CarBulletDetailsView.swift in Sources */,
 				F1CA12302BC5B101006A427F /* GuidomiaQuantricsApp.swift in Sources */,
 				F1CA12402BC5BF50006A427F /* Car.swift in Sources */,
+				F1D8696E2BC83062002733B2 /* RealmManager.swift in Sources */,
 				F125CB542BC75A06009CB373 /* FilterPickerSheet.swift in Sources */,
 				F1CA123E2BC5B682006A427F /* CarItemView.swift in Sources */,
 			);
