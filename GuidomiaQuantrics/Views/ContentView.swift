@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         ScrollView {
             LazyVStack {
-                ForEach(vm.carViewModels) { carVM in
+                ForEach(vm.filteredCarViewModels) { carVM in
                     VStack(spacing: 0) {
                         CarItemView(carVM: carVM)
                             .onTapGesture {

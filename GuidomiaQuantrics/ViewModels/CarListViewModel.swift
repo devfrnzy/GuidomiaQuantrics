@@ -10,17 +10,67 @@ import Foundation
 /// Decodes the JSON file to create Car objects
 /// Creates an array of CarViewModel based on the generated Car objects from the JSON file
 class CarListViewModel: ObservableObject {
+ 
+    // MARK: - Enums
     
-    @Published var carViewModels: [CarViewModel] = []
+    enum FilterConstants: String {
+        case make = "Any make"
+        case model = "Any model"
+    }
+    
+    // MARK: - Published Properties
+    
+    @Published var filteredCarViewModels: [CarViewModel] = []
     @Published var carModelNames = [String: Set<String>]()
     
-    var expandedCarVM: CarViewModel?
+    
+    // MARK: - Filter-related Properties
+    
+    @Published var selectedMakeFilter: String = FilterConstants.make.rawValue {
+        didSet {
+            selectedModelNameFilter = FilterConstants.model.rawValue
+            filterCars()
+        }
+    }
+    @Published var selectedModelNameFilter: String = FilterConstants.model.rawValue {
+        didSet {
+            filterCars()
+        }
+    }
+    
+    var carMakeFilterChoices: [String] {
+        var carMakes = [FilterConstants.make.rawValue]
+        carMakes.append(contentsOf: Array(carModelNames.keys))
+        return carMakes
+    }
+    
+    var carModelNameFilterChoices: [String] {
+        var modelNames = [FilterConstants.model.rawValue]
+        if let carModelNamesByMake = carModelNames[selectedMakeFilter] {
+            modelNames.append(contentsOf: carModelNamesByMake)
+        }
+        return modelNames
+    }
+    
+    // MARK: - Private Properties
+    
     private let fileName = "car_list"
+    private var carViewModels: [CarViewModel] = []
     private var cars: [Car] = []
+    private var expandedCarVM: CarViewModel?
     
     init() {
         decodeCarsJSON()
         processCars()
+    }
+    
+    /// Filter cars based on current makeFIlter and modelFilter
+    func filterCars() {
+        filteredCarViewModels = carViewModels.filter{
+            let modelContainsFilter = $0.model == selectedModelNameFilter || selectedModelNameFilter == FilterConstants.model.rawValue
+            let makeContainsFilter = $0.make == selectedMakeFilter || selectedMakeFilter == FilterConstants.make.rawValue
+            return modelContainsFilter && makeContainsFilter
+        }
     }
     
     /// Decodes the JSON file to an array of Car
@@ -37,6 +87,7 @@ class CarListViewModel: ObservableObject {
             print("DEBUG: Error has occured - \(error.localizedDescription)")
         }
     }
+    
     
     
     /// Generates an array of CarViewModel and the dictionary of carModelNames
@@ -56,7 +107,8 @@ class CarListViewModel: ObservableObject {
         }
         
         carViewModels = carVMs
-        expand(carVM: carViewModels[0])
+        filteredCarViewModels = carViewModels
+        expand(carVM: filteredCarViewModels[0])
     }
     
     /// Expands or Collapses the CarViewModel depending on its current status
