@@ -6,14 +6,16 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Car: Codable {
-    var make: String
-    var model: String
-    var customerPrice: Double
-    var marketPrice:  Double
-    var prosList: [String]
-    var consList: [String]
-    var rating: Int
-    var imageName: String
+class Car: Object {
+    @Persisted var make: String
+    @Persisted var model: String
+    @Persisted var customerPrice: Double
+    @Persisted var marketPrice:  Double
+    @Persisted var prosList: List<String>
+    @Persisted var consList: List<String>
+    @Persisted var rating: Int
+    @Persisted var imageName: String
+
 }
