@@ -9,10 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var vm = CarListViewModel()
-    
+    @State var isMakeFilterPresented = false
+    @State var isModelFilterPresented = false
+
     var body: some View {
         ScrollView {
             LazyVStack {
+                filterSectionView
+                    .padding(.horizontal)
+                
                 ForEach(vm.filteredCarViewModels) { carVM in
                     VStack(spacing: 0) {
                         CarItemView(carVM: carVM)
@@ -28,6 +33,7 @@ struct ContentView: View {
                             .foregroundColor(.themeOrange)
                             .padding()
                     }
+                    
                     .listRowInsets(EdgeInsets())
                     .listRowSeparator(.hidden)
                 }
@@ -51,12 +57,19 @@ struct ContentView: View {
                         .frame(height: 35)
                         .shadow(radius: 2, x: 1, y: 1)
                     HStack {
-                        Text("Any make")
+                        Text("\(vm.selectedMakeFilter)")
                             .bold()
                             .foregroundStyle(.themeText)
                         Spacer()
                     }
                     .padding(.horizontal)
+                }
+                .onTapGesture {
+                    isMakeFilterPresented = true
+                }
+                .sheet(isPresented: $isMakeFilterPresented) {
+                    FilterPickerSheet(isPresented: $isMakeFilterPresented, selectedOption: $vm.selectedMakeFilter, options: vm.carMakeFilterChoices)
+                        .presentationDetents([.height(150)])
                 }
                 
                 // Model Filter
@@ -73,6 +86,13 @@ struct ContentView: View {
                     }
                     .padding(.horizontal)
                 }
+                .onTapGesture {
+                    isModelFilterPresented = true
+                }
+                .sheet(isPresented: $isModelFilterPresented) {
+                    FilterPickerSheet(isPresented: $isModelFilterPresented, selectedOption: $vm.selectedModelNameFilter, options: vm.carModelNameFilterChoices)
+                        .presentationDetents([.height(150)])
+                }
             }
             
         }
@@ -82,6 +102,7 @@ struct ContentView: View {
                 .foregroundColor(.themeDarkGray)
         }
     }
+
 }
 
 #Preview {
