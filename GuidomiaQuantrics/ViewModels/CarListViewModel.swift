@@ -56,13 +56,14 @@ class CarListViewModel: ObservableObject {
     
     private let fileName = "car_list"
     private var carViewModels: [CarViewModel] = []
-    private var cars: [Car] = []
+    private var cars: [Car]
     private var expandedCarVM: CarViewModel?
-    
+
     init() {
-        decodeCarsJSON()
+        self.cars = Array(RealmManager.shared.getAllObjects(Car.self))
         processCars()
     }
+    
     
     /// Filter cars based on current makeFIlter and modelFilter
     func filterCars() {
@@ -73,30 +74,15 @@ class CarListViewModel: ObservableObject {
         }
     }
     
-    /// Decodes the JSON file to an array of Car
-    func decodeCarsJSON() {
-        guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
-            print("DEBUG: JSON file:\(fileName).json not found")
-            return
-        }
-        
-        do {
-            let data = try Data(contentsOf: url)
-            self.cars = try JSONDecoder().decode([Car].self, from: data)
-        } catch {
-            print("DEBUG: Error has occured - \(error.localizedDescription)")
-        }
-    }
-    
-    
     
     /// Generates an array of CarViewModel and the dictionary of carModelNames
     func processCars() {
+    
         var carVMs = [CarViewModel]()
         for car in cars {
             let carVM = CarViewModel(car: car)
             carVMs.append(carVM)
-            
+
             // Collect available make/model
             if var modelNames = carModelNames[car.make] {
                 modelNames.insert(car.model)
@@ -108,7 +94,9 @@ class CarListViewModel: ObservableObject {
         
         carViewModels = carVMs
         filteredCarViewModels = carViewModels
-        expand(carVM: filteredCarViewModels[0])
+        if !cars.isEmpty {
+            expand(carVM: filteredCarViewModels[0])
+        }
     }
     
     /// Expands or Collapses the CarViewModel depending on its current status
