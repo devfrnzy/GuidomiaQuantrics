@@ -79,7 +79,7 @@ struct ContentView: View {
                         .frame(height: 35)
                         .shadow(radius: 2, x: 1, y: 1)
                     HStack {
-                        Text("Any model")
+                        Text("\(vm.selectedModelNameFilter)")
                             .bold()
                             .foregroundStyle(.themeText)
                         Spacer()
