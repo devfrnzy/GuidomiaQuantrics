@@ -38,11 +38,11 @@ class CarViewModel: ObservableObject {
     }
     
     var pros: [String] {
-        return car.prosList
+        return Array(car.prosList)
     }
     
     var cons: [String] {
-        return car.consList
+        return Array(car.consList)
     }
 }
 

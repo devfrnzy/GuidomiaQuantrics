@@ -14,7 +14,6 @@ class CarDataPreloader {
             return
         }
         
-        
         let filename = "car_list"
         guard let url = Bundle.main.url(forResource: filename, withExtension: "json") else {
             print("DEBUG: JSON file:\(filename).json not found")
@@ -29,7 +28,7 @@ class CarDataPreloader {
             }
             
             for dictionary in jsonArray {
-                let car = try Car(dictionary: dictionary)
+                let car = try CarFactory.createCar(from: dictionary)
                 RealmManager.shared.addObject(car)
             }
         } catch {

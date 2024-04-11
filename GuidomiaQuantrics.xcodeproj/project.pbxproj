@@ -23,6 +23,7 @@
 		F1D8696C2BC83023002733B2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F1D8696B2BC83023002733B2 /* RealmSwift */; };
 		F1D8696E2BC83062002733B2 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D8696D2BC83062002733B2 /* RealmManager.swift */; };
 		F1D869702BC830FF002733B2 /* CarDataPreloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D8696F2BC830FF002733B2 /* CarDataPreloader.swift */; };
+		F1D869722BC8364F002733B2 /* CarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D869712BC8364F002733B2 /* CarFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		F1CA12472BC5CFC6006A427F /* Double+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Formatting.swift"; sourceTree = "<group>"; };
 		F1D8696D2BC83062002733B2 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		F1D8696F2BC830FF002733B2 /* CarDataPreloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDataPreloader.swift; sourceTree = "<group>"; };
+		F1D869712BC8364F002733B2 /* CarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				F1CA12352BC5B103006A427F /* Preview Content */,
 				F1D8696D2BC83062002733B2 /* RealmManager.swift */,
 				F1D8696F2BC830FF002733B2 /* CarDataPreloader.swift */,
+				F1D869712BC8364F002733B2 /* CarFactory.swift */,
 			);
 			path = GuidomiaQuantrics;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1CA12442BC5C136006A427F /* CarListViewModel.swift in Sources */,
+				F1D869722BC8364F002733B2 /* CarFactory.swift in Sources */,
 				F1CA12482BC5CFC6006A427F /* Double+Formatting.swift in Sources */,
 				F1CA12462BC5CB42006A427F /* CarViewModel.swift in Sources */,
 				F1CA12322BC5B101006A427F /* ContentView.swift in Sources */,
