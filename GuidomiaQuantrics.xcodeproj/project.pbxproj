@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F125CB452BC71ACB009CB373 /* CarBulletDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F125CB442BC71ACB009CB373 /* CarBulletDetailsView.swift */; };
+		F125CB542BC75A06009CB373 /* FilterPickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F125CB532BC75A06009CB373 /* FilterPickerSheet.swift */; };
 		F1CA12302BC5B101006A427F /* GuidomiaQuantricsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA122F2BC5B101006A427F /* GuidomiaQuantricsApp.swift */; };
 		F1CA12322BC5B101006A427F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA12312BC5B101006A427F /* ContentView.swift */; };
 		F1CA12342BC5B103006A427F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1CA12332BC5B103006A427F /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		F125CB442BC71ACB009CB373 /* CarBulletDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBulletDetailsView.swift; sourceTree = "<group>"; };
+		F125CB532BC75A06009CB373 /* FilterPickerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPickerSheet.swift; sourceTree = "<group>"; };
 		F1CA122C2BC5B101006A427F /* GuidomiaQuantrics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuidomiaQuantrics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1CA122F2BC5B101006A427F /* GuidomiaQuantricsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidomiaQuantricsApp.swift; sourceTree = "<group>"; };
 		F1CA12312BC5B101006A427F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 				F1CA12312BC5B101006A427F /* ContentView.swift */,
 				F1CA123D2BC5B682006A427F /* CarItemView.swift */,
 				F125CB442BC71ACB009CB373 /* CarBulletDetailsView.swift */,
+				F125CB532BC75A06009CB373 /* FilterPickerSheet.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				F125CB452BC71ACB009CB373 /* CarBulletDetailsView.swift in Sources */,
 				F1CA12302BC5B101006A427F /* GuidomiaQuantricsApp.swift in Sources */,
 				F1CA12402BC5BF50006A427F /* Car.swift in Sources */,
+				F125CB542BC75A06009CB373 /* FilterPickerSheet.swift in Sources */,
 				F1CA123E2BC5B682006A427F /* CarItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
