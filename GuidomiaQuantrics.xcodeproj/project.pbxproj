@@ -126,12 +126,10 @@
 				F125CB492BC7279F009CB373 /* Views */,
 				F125CB4B2BC727B5009CB373 /* ViewModels */,
 				F125CB4A2BC727AE009CB373 /* Models */,
+				F1D869732BC84002002733B2 /* DataHandlers */,
 				F125CB4D2BC727C6009CB373 /* Resource */,
 				F125CB4C2BC727BD009CB373 /* Extensions */,
 				F1CA12352BC5B103006A427F /* Preview Content */,
-				F1D8696D2BC83062002733B2 /* RealmManager.swift */,
-				F1D8696F2BC830FF002733B2 /* CarDataPreloader.swift */,
-				F1D869712BC8364F002733B2 /* CarFactory.swift */,
 			);
 			path = GuidomiaQuantrics;
 			sourceTree = "<group>";
@@ -142,6 +140,16 @@
 				F1CA12362BC5B103006A427F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F1D869732BC84002002733B2 /* DataHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				F1D8696D2BC83062002733B2 /* RealmManager.swift */,
+				F1D8696F2BC830FF002733B2 /* CarDataPreloader.swift */,
+				F1D869712BC8364F002733B2 /* CarFactory.swift */,
+			);
+			path = DataHandlers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
