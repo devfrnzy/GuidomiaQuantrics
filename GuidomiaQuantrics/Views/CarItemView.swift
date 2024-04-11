@@ -21,10 +21,12 @@ struct CarItemView: View {
                     .padding(.leading)
                     .fixedSize()
                 VStack(alignment: .leading) {
-                    Text(carVM.make)
+                    Text(carVM.name)
                         .font(.title2)
                         .bold()
                         .foregroundStyle(.themeText)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.05)
                     Text("Price: \(carVM.price)")
                         .bold()
                         .foregroundStyle(.themeText)

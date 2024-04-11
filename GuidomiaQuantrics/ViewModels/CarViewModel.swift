@@ -16,6 +16,10 @@ class CarViewModel: ObservableObject {
         self.car = car
     }
     
+    var name: String {
+        return "\(car.make) \(car.model)"
+    }
+    
     var make: String {
         return car.make
     }
