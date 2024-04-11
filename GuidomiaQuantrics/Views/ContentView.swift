@@ -13,33 +13,81 @@ struct ContentView: View {
     @State var isModelFilterPresented = false
 
     var body: some View {
-        ScrollView {
-            LazyVStack {
-                filterSectionView
-                    .padding(.horizontal)
-                
-                ForEach(vm.filteredCarViewModels) { carVM in
-                    VStack(spacing: 0) {
-                        CarItemView(carVM: carVM)
-                            .onTapGesture {
-                                withAnimation {
-                                    vm.expandCollapse(carVM: carVM)
-                                }
-                            }
-                        
-                        // Custom Separator
-                        Rectangle()
-                            .frame(height: 4)
-                            .foregroundColor(.themeOrange)
-                            .padding()
-                    }
+        VStack(spacing: 0) {
+            headerView
+                .frame(height: 60)
+            ScrollView {
+                LazyVStack {
+                    carAdView
+                    filterSectionView
+                        .padding(.horizontal)
                     
-                    .listRowInsets(EdgeInsets())
-                    .listRowSeparator(.hidden)
+                    ForEach(vm.filteredCarViewModels) { carVM in
+                        VStack(spacing: 0) {
+                            CarItemView(carVM: carVM)
+                                .onTapGesture {
+                                    withAnimation {
+                                        vm.expandCollapse(carVM: carVM)
+                                    }
+                                }
+                            
+                            // Custom Separator
+                            Rectangle()
+                                .frame(height: 4)
+                                .foregroundColor(.themeOrange)
+                                .padding()
+                        }
+                        
+                        .listRowInsets(EdgeInsets())
+                        .listRowSeparator(.hidden)
+                    }
                 }
             }
         }
         
+    }
+    
+    var headerView: some View {
+        ZStack {
+            Rectangle()
+                .foregroundColor(.themeOrange)
+            HStack {
+                Text("GUIDOMIA")
+                    .font(.title)
+                    .bold()
+                    .foregroundStyle(.white)
+                    .padding(.leading)
+                Spacer()
+                Image(systemName: "line.3.horizontal")
+                    .resizable()
+                    .frame(width: 30, height: 20)
+                    .foregroundStyle(.white)
+                    .padding()
+            }
+        }
+    }
+    
+    var carAdView: some View {
+        ZStack {
+            Image("Tacoma")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            HStack {
+                VStack(alignment: .leading) {
+                    Spacer()
+                    Text("Tacoma 2021")
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundStyle(.white)
+                    Text("Get yours now")
+                        .font(.title2)
+                        .bold()
+                        .foregroundStyle(.white)
+                }
+                Spacer()
+            }
+            .padding()
+        }
     }
     
     var filterSectionView: some View {
